@@ -28,10 +28,10 @@ jobs:
         name: Cache Docker layers
         uses: actions/cache@v2.1.7
         with:
-          path: /tmp/.buildx-cache-dashboard
-          key: ${{ runner.os }}-${{ github.sha }}-dashboard-buildx-${{ github.sha }}
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-${{ github.sha }}-dashboard-buildx-
+            ${{ runner.os }}-buildx-
       - 
         name: Available platforms
         run: echo ${{ steps.buildx.outputs.platforms }}
@@ -54,13 +54,13 @@ jobs:
           tags: |
             hvalev/monero-dashboard:${{ steps.get_version.outputs.version }}
             hvalev/monero-dashboard:latest
-          cache-from: type=local,src=/tmp/.buildx-cache-dashboard
-          cache-to: type=local,dest=/tmp/.buildx-cache-new-dashboard
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new
       - 
         name: Move cache
         run: |
-          rm -rf /tmp/.buildx-cache-dashboard
-          mv /tmp/.buildx-cache-new-dashboard /tmp/.buildx-cache-dashboard
+          rm -rf /tmp/.buildx-cache
+          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
       - 
         name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v2
