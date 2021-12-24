@@ -1,4 +1,4 @@
-FROM node:14.18.2
+FROM node:17.3.0
 ENV DASHBOARD_V=1.0.8
 
 RUN apt-get update && apt-get install -y git
