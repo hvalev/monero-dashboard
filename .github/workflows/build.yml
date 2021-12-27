@@ -48,8 +48,7 @@ jobs:
           context: .
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
-          platforms: linux/arm64,linux/amd64
-          #linux/arm/v7,
+          platforms: linux/arm/v7,linux/arm64,linux/amd64
           push: true
           tags: |
             hvalev/monero-dashboard:${{ steps.get_version.outputs.version }}
