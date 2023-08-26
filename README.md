@@ -1,6 +1,6 @@
 # Monero Node Dashboard
 [![build](https://github.com/hvalev/monero-dashboard/actions/workflows/build.yml/badge.svg)](https://github.com/hvalev/monero-dashboard/actions/workflows/build.yml)
-![dashboard%20version](https://img.shields.io/badge/dashboard%20version-1.0.9-green)
+![dashboard%20version](https://img.shields.io/badge/dashboard%20version-1.0.11-green)
 ![Docker Pulls](https://img.shields.io/docker/pulls/hvalev/monero-dashboard)
 ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/hvalev/monero-dashboard)
 
