@@ -39,7 +39,7 @@ jobs:
           find: ${{ steps.monerod-dashboard-version-current.outputs.current_tag }}
           replace: ${{ steps.monerod-dashboard-version-new.outputs.release_tag }}
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6.0.2
+        uses: peter-evans/create-pull-request@v6.0.3
         with:
           commit-message: Update MoneroD Dashboard to ${{ steps.monerod-dashboard-version-new.outputs.release_tag }}
           title: Update MoneroD Dashboard to ${{ steps.monerod-dashboard-version-new.outputs.release_tag }}
