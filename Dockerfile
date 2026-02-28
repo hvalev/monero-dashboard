@@ -1,4 +1,4 @@
-FROM node:14.21.3-bullseye
+FROM node:25.7.0-bullseye
 ENV DASHBOARD_V=1.1.0
 
 RUN apt-get update && apt-get install -y git
